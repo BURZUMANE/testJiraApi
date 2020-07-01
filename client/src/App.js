@@ -33,7 +33,7 @@ function App() {
     setState({ selectedOption });
     const fetchData = async () => {
       const result = await axios.get(
-        `http://localhost:5002/api/issues/${selectedOption.value}`,
+        `https://honest-toque-64210.herokuapp.com/api/issues/${selectedOption.value}`,
       );
       console.log(result);
       setData(result.data);
@@ -46,7 +46,7 @@ function App() {
     // console.log(jql);
     const fetchData = async () => {
       const result = await axios.get(
-        `http://localhost:5002/api/sepcified/${jql}`,
+        `https://honest-toque-64210.herokuapp.com/api/sepcified/${jql}`,
       );
       setSpecified(result.data);
     };
@@ -57,7 +57,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       const jql = "issuetype+in+standardIssueTypes()+ORDER+BY+created+DESC";
-      const result = await axios.get(`http://localhost:5002/api/issues/${jql}`);
+      const result = await axios.get(`https://honest-toque-64210.herokuapp.com/${jql}`);
       setData(result.data);
     };
     fetchData();
