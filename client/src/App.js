@@ -57,7 +57,9 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       const jql = "issuetype+in+standardIssueTypes()+ORDER+BY+created+DESC";
-      const result = await axios.get(`https://honest-toque-64210.herokuapp.com/${jql}`);
+      const result = await axios.get(
+        `https://honest-toque-64210.herokuapp.com/api/issues/${jql}`,
+      );
       setData(result.data);
     };
     fetchData();
