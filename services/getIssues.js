@@ -139,6 +139,7 @@ const makeSingleIssue = item => {
   };
 };
 const getIssues = jql => {
+  console.log(jql);
   return fetch(`https://test-fast.atlassian.net/rest/api/3/search?jql=${jql}`, {
     method: "GET",
     headers: {
@@ -184,7 +185,7 @@ const getIssues = jql => {
           singleIssue,
         );
       });
-
+      
       return assignees;
     })
     .catch(err => console.error(err));
